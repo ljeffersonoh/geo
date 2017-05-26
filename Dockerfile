@@ -4,7 +4,7 @@ FROM python:3
 
 WORKDIR /app
 
-RUN pip install Pyrebase==3.0.27
+# RUN pip install Pyrebase==3.0.27
 
 # RUN mkdir -p /tmp
 COPY requirements.txt ./
