@@ -1,3 +1,4 @@
+import os
 import json
 import geojson
 from shapely.geometry import shape, Point
@@ -5,7 +6,6 @@ from shapely.geometry import shape, Point
 import logging
 logging.basicConfig(level=0, format='')
 log = logging.getLogger('test')
-
 
 """
 given a GeoJSON object, we want to be able to determine if the Point is in the region
@@ -23,14 +23,17 @@ given a point, determine the "name:en" that the point is in
 
 """
 
-
-
 def point_to_iraq(point):
-    """
-    returns a json of the properties of teh 
-    """
+    # try:
+    #     BASE_DIR = os.path.join( os.path.dirname( __file__ ), '..' )
+    #     print(BASE_DIR)
+    # except Exception as e:
+    #     print(e)
 
-    with open('data/admin_level_4.geojson', 'r') as f:
+    a = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'data'))
+    path = os.path.join(a, 'admin_level_4.geojson')
+
+    with open(path, 'r') as f:
         admin_level_4 = json.load(f)
 
     # for feature in admin_level_4['features']:

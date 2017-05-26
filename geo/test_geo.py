@@ -27,3 +27,4 @@ def test_diyala():
     properties = point_to_iraq(p)
     assert properties['name:en'] == 'Diyala'
 
+

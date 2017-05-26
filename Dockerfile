@@ -5,9 +5,9 @@ FROM python:3
 WORKDIR /app
 
 RUN pip install Pyrebase==3.0.27
-RUN pip install jupyter
 
 # RUN mkdir -p /tmp
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
+RUN pip install -e .
 
